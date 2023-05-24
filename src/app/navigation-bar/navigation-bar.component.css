@@ -1,15 +1,31 @@
-.container {
+.navigation {
   display: grid;
-  height: 100vh;
-  grid-template-columns: repeat(4, 25%);
-  grid-template-rows: repeat(4, 25%);
+  grid-template-columns: 40% 20% 40%;
+  grid-template-rows: 200px;
+  grid-template-areas:
+    "navigation logo icons"
 }
-.button {
-  grid-row: 1/1;
-  grid-column: 1/4;
+
+.our-products {
+  grid-area: navigation;
 }
-.one {
-  background: red;
-  grid-row: 1/;
-  grid-column: 1/2;
+
+.discover {
+  grid-area: navigation;
+}
+
+.earn-rewards {
+  grid-area: navigation;
+}
+
+.logo {
+  width: 70px;
+}
+
+.icons {
+  grid-area: icons;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+  "account search cart"
 }
