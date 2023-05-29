@@ -1,65 +1,33 @@
-.navigation {
-  display: grid;
-  grid-template-columns: 40% 20% 40%;
-  grid-template-rows: 100px;
-  grid-template-areas:
-    "navigation logo icons";
+nav {
+  display: flex;
+  justify-content: center;
+}
+
+.bi {
+  font-size: 1.5rem;
+  margin-right: 40px;
 }
 
 .index {
-  grid-area: icons;
-  display: grid;
-  grid-template-columns: 30% 20% 30% 20% ;
-  gap: 5%;
-  grid-template-areas:
-  "our-products discover earn-rewards";
-  grid-area: navigation;
-}
-.our-products {
-  grid-area: our-products;
-  align-self: center;
-  justify-self: center;
+  flex-grow: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.discover {
-  grid-area: discover;
-  align-self: center;
-  justify-self: center;
+.icon {
+  flex-grow: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.earn-rewards {
-  grid-area: earn-rewards;
-  align-self: center;
-  justify-self: center;
+.logo {
+  flex-grow: 5;
+  justify-content: center;
+  align-items: center;
 }
 
-.navigation img {
-  width: 100%;
-  grid-area: logo;
-}
-
-.icons {
-  grid-area: icons;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-areas:
-  "account search cart"
-}
-
-.account {
-  grid-area: account;
-  align-self: center;
-  justify-self: center;
-}
-
-.search {
-  grid-area: search;
-  align-self: center;
-  justify-self: center;
-}
-
-.cart {
-  grid-area: cart;
-  align-self: center;
-  justify-self: center;
+.index a {
+  margin-right: 40px;
 }
