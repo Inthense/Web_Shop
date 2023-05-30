@@ -1,5 +1,10 @@
+
 nav {
-  display: flex;
+  display: grid;
+  margin-left: 50px;
+  margin-right: 100px;
+  grid-template-columns: 40% 20% 40%;
+  grid-template-areas: "index logo icons";
   justify-content: center;
 }
 
@@ -9,25 +14,31 @@ nav {
 }
 
 .index {
-  flex-grow: 3;
+  grid-area: index;
+  flex-grow: 1;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
 }
 
 .icon {
-  flex-grow: 2;
+  grid-area: icons;
+  flex-grow: 1;
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
 }
 
 .logo {
-  flex-grow: 5;
-  justify-content: center;
-  align-items: center;
+  grid-area: logo;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .index a {
   margin-right: 40px;
+}
+
+.btn {
+  background-color: white;
 }
