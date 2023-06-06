@@ -1,0 +1,24 @@
+<div>
+  <table>
+    <ng-container >
+      <th>Product</th>
+      <td *ngFor="let element">
+        <img src="{{element.product}}" alt="product">
+      </td>
+      <td>
+        <button routerLink="/our-products" class="btn btn-primary" type="submit">Einkauf fortsetzen.</button>
+      </td>
+    </ng-container>
+    <tr *ngFor="let row; colums: displayedColums"></tr>
+  </table>
+</div>
+
+
+
+
+<div *ngIf="cart.items.length">
+  <p>
+    Der Einkaufswagen ist leer.
+    <button routerLink="/our-products" class="btn btn-primary" type="submit">Starte jetzt deinen Einkauf!</button>
+  </p>
+</div>

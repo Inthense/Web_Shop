@@ -5,7 +5,6 @@ nav {
   margin-right: 100px;
   grid-template-columns: 40% 20% 40%;
   grid-template-areas: "index logo icons";
-  justify-content: center;
 }
 
 .bi {
@@ -14,17 +13,17 @@ nav {
 }
 
 .index {
+  display: flex;
   grid-area: index;
   flex-grow: 1;
-  display: flex;
   justify-content: left;
   align-items: center;
 }
 
 .icon {
+  display: flex;
   grid-area: icons;
   flex-grow: 1;
-  display: flex;
   justify-content: right;
   align-items: center;
 }
