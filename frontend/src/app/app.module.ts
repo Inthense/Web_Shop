@@ -10,6 +10,8 @@ import { DiscoverComponent } from './pages/discover/discover.component';
 import { EarnRewardsComponent } from './pages/earn-rewards/earn-rewards.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CartComponent } from './pages/cart/cart.component';
+import { SearchComponent } from './pages/search/search.component';
+import { ItemsPageComponent } from './pages/items-page/items-page.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { CartComponent } from './pages/cart/cart.component';
     DiscoverComponent,
     EarnRewardsComponent,
     ProfileComponent,
-    CartComponent
+    CartComponent,
+    SearchComponent,
+    ItemsPageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

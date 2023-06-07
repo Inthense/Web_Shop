@@ -1,1 +1,33 @@
-<p>our-products works!</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<ul>
+  <li *ngFor="let item of items">
+    <a style="text-decoration: none; color: inherit;" routerLink="/items/{{item.id}}">
+      <img [src]="item.imageUrl" [alt]="item.name">
+      <div class="content">
+        <div class="name">
+          {{item.name}}
+        </div>
+        <div class="rating">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+        </div>
+        <div class="product-item-footer">
+        </div>
+        <div class="price">
+          <span>
+            {{item.price | currency}}
+          </span>
+        </div>
+        <div class="quantity">
+            {{item.quantity}}
+        </div>
+        <div class="id">
+            {{item.id}}
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>

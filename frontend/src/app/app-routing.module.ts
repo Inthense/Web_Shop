@@ -6,6 +6,8 @@ import { DiscoverComponent } from './pages/discover/discover.component';
 import { EarnRewardsComponent } from './pages/earn-rewards/earn-rewards.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { SearchComponent } from './pages/search/search.component';
+import { ItemsPageComponent } from './pages/items-page/items-page.component';
 
 const routes: Routes = [{
   path: 'home',
@@ -33,7 +35,19 @@ const routes: Routes = [{
 },
 {
   path: '', redirectTo: 'home', pathMatch: 'full'
-}
+},
+{
+  path: 'search',
+  component: SearchComponent
+},
+{
+  path: 'search/:searchTerm',
+  component: SearchComponent
+},
+{
+  path: 'items/:id',
+  component: ItemsPageComponent
+},
 ];
 
 @NgModule({
