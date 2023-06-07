@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<!-- Ausgabe der Daten -->
 <div class="items">
   <img [src]="items.imageUrl" [alt]="items.name"/>
   <div class="details">
@@ -14,7 +14,7 @@
           <span class="fa fa-star"></span>
       </div>
       <div class="price">
-        {{items.price | currency}}
+        {{items.price | currency:"EUR"}}
       </div>
       <div class="quantity">
         {{items.quantity}}
