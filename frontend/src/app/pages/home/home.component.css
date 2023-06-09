@@ -2,7 +2,7 @@ img {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 200px;
-  height: 600px;
+  height: 800px;
   width: 100%;
 }
 

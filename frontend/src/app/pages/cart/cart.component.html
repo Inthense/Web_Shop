@@ -1,1 +1,10 @@
-<h1>works</h1>
+<app-current-page title="Cart Page" margin="1.5rem 0 0 2.5rem"></app-current-page>
+<div class="cart">
+  <ul>
+    <li *ngFor="let cartItem of cart.items">
+      <div>
+        <img [src]="cartItem.ca">
+      </div>
+    </li>
+  </ul>
+</div>
