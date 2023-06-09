@@ -1,5 +1,11 @@
 <app-current-page title="Cart Page" margin="1.5rem 0 0 2.5rem"></app-current-page>
-<div class="cart">
+<app-not-found
+[visible]="!cart || !cart.items.length"
+notFoundMessage="Dein Einkaufswagen ist Leer."
+resetLinkText="Jetzt einkaufen"
+resetLinkRoute="/our-products"
+></app-not-found>
+<div *ngIf="cart && cart.items.length" class="cart">
   <ul>
     <li *ngFor="let cartItem of cart.items">
       <div>
@@ -29,11 +35,11 @@
       </div>
     </li>
   </ul>
-  <div>
+  <div class="sum">
     <div class="item-quantity">
       {{cart.countSum}}
     </div>
-    <div class="sum">
+    <div class="total-price">
       {{cart.totalPrice | currency:'EUR'}}
     </div>
   </div>

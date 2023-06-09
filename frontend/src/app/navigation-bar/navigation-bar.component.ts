@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { CartService } from "../services/cart.service";
 
 @Component({
   selector: 'app-navigation-bar',
@@ -6,7 +7,10 @@ import { Component } from "@angular/core";
   styleUrls: ['./navigation-bar.component.css']
 })
 export class NavigationBarComponent {
-  logoClicked() {
-
+  cartQuantity=0;
+  constructor(cartService:CartService) {
+    cartService.getCartObservable().subscribe((newCart)=> {
+      this.cartQuantity=newCart.countSum;
+    })
   }
 }

@@ -1,6 +1,10 @@
 <app-current-page title="Our Products" margin="1.5rem 0 0 2.5rem"></app-current-page>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Ausgabe der Daten -->
+<app-not-found
+  [visible]="!items || !items.length"
+  resetLinkText="Hier gibt es nichts zu sehen..."
+></app-not-found>
 <ul>
   <li *ngFor="let item of items">
     <a style="text-decoration: none; color: inherit;" routerLink="/items/{{item.id}}">

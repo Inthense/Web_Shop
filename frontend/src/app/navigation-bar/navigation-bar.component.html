@@ -7,7 +7,7 @@
 </div>
   <!-- Logo -->
   <a routerLink="/home">
-  <img class="logo" src="assets/img/logo.png" (click)="logoClicked()">
+  <img class="logo" src="assets/img/logo.png" >
 </a>
 <div class="icon">
    <!-- Icons -->
@@ -18,7 +18,7 @@
   <i class="bi bi-search"></i>
   </a>
   <a style="text-decoration: none; color: inherit;" routerLink="/cart">
-  <i class="bi bi-bag"></i>
+  <i class="bi bi-bag"><span *ngIf="cartQuantity">{{cartQuantity}}</span></i>
 </a>
 </div>
 </nav>

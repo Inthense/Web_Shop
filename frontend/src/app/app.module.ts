@@ -13,6 +13,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { SearchComponent } from './pages/search/search.component';
 import { ItemsPageComponent } from './pages/items-page/items-page.component';
 import { CurrentPageComponent } from './pages/current-page/current-page.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CurrentPageComponent } from './pages/current-page/current-page.componen
     CartComponent,
     SearchComponent,
     ItemsPageComponent,
-    CurrentPageComponent
+    CurrentPageComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
