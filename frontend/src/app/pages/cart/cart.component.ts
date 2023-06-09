@@ -18,7 +18,7 @@ export class CartComponent {
     })
   }
 
-  remvoceFromCart(cartItem:CartItem) {
+  removeFromCart(cartItem:CartItem) {
     this.cartService.removeFromCart(cartItem.item.id);
   }
 
