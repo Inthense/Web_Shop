@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,8 @@ import { SearchComponent } from './pages/search/search.component';
 import { ItemsPageComponent } from './pages/items-page/items-page.component';
 import { CurrentPageComponent } from './pages/current-page/current-page.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,11 +31,14 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     SearchComponent,
     ItemsPageComponent,
     CurrentPageComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

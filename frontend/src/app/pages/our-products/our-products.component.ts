@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Items } from 'src/app/models/items.model';
 import { ItemsService } from 'src/app/services/items.service';
 
@@ -12,11 +13,16 @@ export class OurProductsComponent {
 
   items:Items[] = [];
   constructor(private itemsService:ItemsService, activatedRoute:ActivatedRoute) {
+      let itemsObservable:Observable<Items[]>;
       activatedRoute.params.subscribe((params) => {
       if(params.searchTerm)
-      this.items = this.itemsService.getAllItemsSearchTerm(params.searchTerm)
+      itemsObservable = this.itemsService.getAllItemsSearchTerm(params.searchTerm)
       else
-      this.items=itemsService.getAll();
+      itemsObservable=itemsService.getAll();
+
+      itemsObservable.subscribe((serverItems) => {
+        this.items = serverItems;
+      })
     })
   }
 

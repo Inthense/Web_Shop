@@ -1,21 +1,23 @@
 import { Injectable } from '@angular/core';
 import { Items } from '../models/items.model';
-import { sample_items } from 'src/data';
+import { HttpClient } from '@angular/common/http';
+import { ITEMS_URL, ITEMS_BY_SEARCH_URL, ITEMS_BY_ID_URL } from '../urls';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ItemsService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
-  getAll():Items[] {
-    return sample_items;
+  getAll(): Observable<Items[]> {
+    return this.http.get<Items[]>(ITEMS_URL);
   }
   getAllItemsSearchTerm(searchTerm:string) {
-    return this.getAll().filter( items => items.name.toLowerCase().includes(searchTerm.toLowerCase()));
+    return this.http.get<Items[]>(ITEMS_BY_SEARCH_URL + searchTerm);
   }
-  getItemsById(itemsId:string):Items {
-    return this.getAll().find(items => items.id == itemsId) ?? new Items();
+  getItemsById(itemsId:string):Observable<Items> {
+    return this.http.get<Items>(ITEMS_BY_ID_URL + itemsId);
   }
 }

@@ -1,0 +1,23 @@
+<div class="login">
+  <div class="details">
+    <app-current-page title="Login"></app-current-page>
+
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+      <div class="input-email">
+        <label>E-Mail</label>
+        <div>
+          <input type="email" placeholder="E-Mail" formControlName="email"/>
+        </div>
+      </div>
+      <div class="input-password">
+        <label>E-Mail</label>
+        <div>
+          <input type="password" placeholder="Passwort" formControlName="password"/>
+        </div>
+      </div>
+      <div class="button">
+        <button type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+</div>

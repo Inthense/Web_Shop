@@ -8,6 +8,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SearchComponent } from './pages/search/search.component';
 import { ItemsPageComponent } from './pages/items-page/items-page.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [{
   path: 'home',
@@ -47,6 +48,10 @@ const routes: Routes = [{
 {
   path: 'items/:id',
   component: ItemsPageComponent
+},
+{
+  path: 'login',
+  component: LoginComponent
 },
 ];
 
