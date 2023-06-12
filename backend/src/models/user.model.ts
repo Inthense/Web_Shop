@@ -15,7 +15,7 @@ export const UserSchema = new Schema<User>({
     email: {type: String, required:true, unique:true},
     password: {type: String, required:true},
     address: {type: String, required:true},
-    token: {type: String, required:true},
+    token: {type: String, required:false},
     isAdmin: {type: Boolean, required:true},
 },{
     timestamps: true,
