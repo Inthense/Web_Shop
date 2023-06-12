@@ -12,7 +12,10 @@
 <div class="icon">
    <!-- Icons -->
    <a style="text-decoration: none; color: inherit;" routerLink="/login">
-  <i class="bi bi-person-circle"></i>
+  <i class="bi bi-person-circle">{{user.name}}</i>
+  <div *ngIf="isAuth" class="menu">
+    <a (click)="logout()">Logout</a>
+  </div>
   </a>
   <a style="text-decoration: none; color: inherit;" routerLink="/search">
   <i class="bi bi-search"></i>
