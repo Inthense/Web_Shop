@@ -2,7 +2,8 @@ import { Router } from "express";
 import { sample_users } from "../data";
 import jwt from 'jsonwebtoken';
 import asyncHandler from 'express-async-handler';
-import { UserModel } from "../models/user.model";
+import { User, UserModel } from "../models/user.model";
+import bcrypt from 'bcryptjs';
 
 const router = Router();
 
@@ -41,5 +42,30 @@ const generateTokenResponse = (user:any) => {
     user.token = token;
     return user;
 }
+
+router.post('/register', asyncHandler(
+    async (req, res) => {
+        const { name, email, password, address } = req.body;
+        const user = await UserModel.findOne({email});
+        if(user) {
+            res.status(400).send("Ein Nutzer für diese E-Mail Adresse ist bereits vorhanden.");
+            return
+        }
+
+        const encryptedPassword = await bcrypt.hash(password, 10);
+        const newUser: User = {
+            id: '',
+            name,
+            email: email.toLowerCase(),
+            password: encryptedPassword,
+            address,
+            isAdmin: false,
+            token: '',
+        }
+
+        const dbUser = await UserModel.create(newUser);
+        res.send(generateTokenResponse(dbUser));
+    }
+))
 
 export default router;

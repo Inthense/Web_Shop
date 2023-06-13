@@ -3,8 +3,9 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { User } from '../models/user';
 import { InterfaceUserLogin } from '../interfaces/InterfaceUserLogin';
 import { HttpClient } from '@angular/common/http';
-import { USER_LOGIN_URL } from '../urls';
+import { USER_LOGIN_URL, USER_REGISTER_URL } from '../urls';
 import { ToastrService } from 'ngx-toastr';
+import { InterfaceUserRegister } from '../interfaces/InterfaceUserRegister';
 
 // For setItem()
 const USER_KEY = 'User';
@@ -52,5 +53,23 @@ export class UserService {
     const userJson = localStorage.getItem(USER_KEY);
     if(userJson) return JSON.parse(userJson) as User;
     return new User();
+  }
+
+  register(userRegister:InterfaceUserRegister): Observable<User> {
+    return this.http.post<User>(USER_REGISTER_URL, userRegister).pipe(
+      tap({
+        next: (user) => {
+          this.setUserToLocalStorage(user);
+          this.userSubject.next(user);
+          this.toastrService.success(
+            `Wilkommen zum Web Shop ${user.name}.`,
+            'Registrierung Erfolgreich.'
+          )
+        },
+        error: (errorResponse) => {
+          this.toastrService.error(errorResponse.error, 'Registrierung Fehlgeschlagen');
+        }
+      })
+    )
   }
 }

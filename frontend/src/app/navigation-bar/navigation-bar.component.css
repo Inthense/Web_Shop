@@ -41,3 +41,18 @@ nav {
 .btn {
   background-color: white;
 }
+
+.menu{
+  position:absolute;
+  z-index:1;
+  background:whitesmoke;
+  display: none;
+}
+
+.menu-container:hover .menu {
+  display: block;
+}
+
+.menu-container{
+  position: relative;
+}

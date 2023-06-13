@@ -11,12 +11,24 @@
 </a>
 <div class="icon">
    <!-- Icons -->
+   <div class="menu-container">
    <a style="text-decoration: none; color: inherit;" routerLink="/login">
-  <i class="bi bi-person-circle">{{user.name}}</i>
-  <div *ngIf="isAuth" class="menu">
+    <i class="bi bi-person-circle">{{user.name}}</i>
+  </a>
+  <div class="menu">
+    <div>
+  <a routerLink="/login">Login</a>
+</div>
+  <a routerLink="/register">Registrieren</a>
+  <div *ngIf="isAuth">
     <a (click)="logout()">Logout</a>
   </div>
-  </a>
+  <div *ngIf="isAdmin">
+    <a routerLink="/admin-page">Admin-Seite</a>
+  </div>
+</div>
+</div>
+
   <a style="text-decoration: none; color: inherit;" routerLink="/search">
   <i class="bi bi-search"></i>
   </a>

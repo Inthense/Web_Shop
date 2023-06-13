@@ -62,3 +62,21 @@ button:hover {
   opacity: 0.9;
   cursor: pointer;
 }
+
+.comment-text {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-left: 10rem;
+}
+
+.comments {
+  display: flex;
+  justify-content: center;
+}
+
+textarea {
+  width: 50rem;
+  height: 30rem;
+  margin-bottom: 5rem;
+  margin-left: 10rem;
+}

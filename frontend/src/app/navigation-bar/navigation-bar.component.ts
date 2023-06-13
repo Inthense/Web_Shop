@@ -30,4 +30,7 @@ export class NavigationBarComponent implements OnInit {
   get isAuth() {
   return this.user.token;
   }
+  get isAdmin() {
+    return this.user.isAdmin;
+    }
 }
