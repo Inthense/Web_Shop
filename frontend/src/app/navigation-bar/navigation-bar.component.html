@@ -16,7 +16,7 @@
     <i class="bi bi-person-circle">{{user.name}}</i>
   </a>
   <div class="menu">
-    <div>
+    <div *ngIf="!isAuth">
   <a routerLink="/login">Login</a>
 </div>
   <a routerLink="/register">Registrieren</a>
