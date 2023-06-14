@@ -1,0 +1,17 @@
+<div>
+  <input #s type="text" placeholder="Suche..." (keyup.enter)="search(s.value)" [value]="searchTerm"/>
+  <button (click)="search(s.value)">Suche</button>
+</div>
+<app-current-page title="Our Products" margin="1.5rem 0 0 2.5rem"></app-current-page>
+<!-- Ausgabe der Daten -->
+<app-not-found
+  [visible]="!user || !user.length"
+  resetLinkText="Hier gibt es nichts zu sehen..."
+></app-not-found>
+<ul>
+  <li *ngFor="let users of user">
+        <div class="name">
+          {{users.name}}
+        </div>
+  </li>
+</ul>

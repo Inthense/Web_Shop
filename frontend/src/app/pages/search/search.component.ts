@@ -18,9 +18,6 @@ export class SearchComponent {
     })
   }
 
-  ngOnInit(): void {
-  }
-
   search(term:string):void {
     if(term)
     this.router.navigateByUrl('/search/'+term)

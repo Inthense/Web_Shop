@@ -1,39 +1,40 @@
-<!-- Navigationv -->
 <nav>
   <div class="index">
-  <a style="text-decoration: none; color: inherit;" routerLink="/our-products">OUR PRODUCTS</a>
-  <a style="text-decoration: none; color: inherit;" routerLink="/discover">DISCOVER</a>
-  <a style="text-decoration: none; color: inherit;" routerLink="/earn-rewards">EARN REWARDS</a>
-</div>
-  <!-- Logo -->
-  <a routerLink="/home">
-  <img class="logo" src="assets/img/logo.png" >
-</a>
-<div class="icon">
-   <!-- Icons -->
-   <div class="menu-container">
-   <a style="text-decoration: none; color: inherit;" routerLink="/login">
-    <i class="bi bi-person-circle">{{user.name}}</i>
-  </a>
-  <div class="menu">
-    <div *ngIf="!isAuth">
-  <a routerLink="/login">Login</a>
-</div>
-  <a routerLink="/register">Registrieren</a>
-  <div *ngIf="isAuth">
-    <a (click)="logout()">Logout</a>
+    <a style="text-decoration: none; color: inherit;" routerLink="/our-products">OUR PRODUCTS</a>
+    <a style="text-decoration: none; color: inherit;" routerLink="/discover">DISCOVER</a>
+    <a style="text-decoration: none; color: inherit;" routerLink="/earn-rewards">EARN REWARDS</a>
   </div>
-  <div *ngIf="isAdmin">
-    <a routerLink="/admin-page">Admin-Seite</a>
-  </div>
-</div>
-</div>
-
-  <a style="text-decoration: none; color: inherit;" routerLink="/search">
-  <i class="bi bi-search"></i>
+  <a class="logo" routerLink="/home">
+    <img src="assets/img/logo.png">
   </a>
-  <a style="text-decoration: none; color: inherit;" routerLink="/cart">
-  <i class="bi bi-bag"><span *ngIf="cartQuantity">{{cartQuantity}}</span></i>
-</a>
-</div>
+  <div class="icon">
+    <ul>
+      <li class="menu-container">
+          <a style="text-decoration: none; color: inherit;" routerLink="/login">
+            <i class="bi bi-person-circle" style="font-style: normal;">{{user.name}}</i>
+          </a>
+          <div class="menu">
+            <div *ngIf="!isAuth">
+              <a style="text-decoration: none; color: inherit;" routerLink="/login">Login</a>
+              <a style="text-decoration: none; color: inherit;" routerLink="/register">Registrieren</a>
+            </div>
+            <div *ngIf="isAuth">
+              <a style="text-decoration: none; color: inherit;" routerLink="/profile">Profil</a>
+              <a (click)="logout()">Logout</a>
+            </div>
+            <div *ngIf="isAdmin">
+              <a style="text-decoration: none; color: inherit;" routerLink="/admin-page">Admin-Seite</a>
+            </div>
+          </div>
+      </li>
+      <li>
+        <a style="text-decoration: none; color: inherit;" routerLink="/search">
+          <i class="bi bi-search"></i>
+        </a>
+        <a style="text-decoration: none; color: inherit;" routerLink="/cart">
+          <i class="bi bi-bag" style="font-style: normal;"><span *ngIf="cartQuantity">{{cartQuantity}}</span></i>
+        </a>
+      </li>
+    </ul>
+  </div>
 </nav>

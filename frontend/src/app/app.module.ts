@@ -25,6 +25,7 @@ import { TextInputComponent } from './pages/parts/text-input/text-input.componen
 import { InputValidationComponent } from './pages/parts/input-validation/input-validation.component';
 import { InputContainerComponent } from './pages/parts/input-container/input-container.component';
 import { DefaultButtonComponent } from './pages/parts/default-button/default-button.component';
+import { UserSearchComponent } from './pages/user-search/user-search.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { DefaultButtonComponent } from './pages/parts/default-button/default-but
     TextInputComponent,
     InputValidationComponent,
     InputContainerComponent,
-    DefaultButtonComponent
+    DefaultButtonComponent,
+    UserSearchComponent
   ],
   imports: [
     BrowserModule,

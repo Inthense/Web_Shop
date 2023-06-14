@@ -1,45 +1,67 @@
-
 nav {
-  display: grid;
-  margin-left: 50px;
-  margin-right: 100px;
-  grid-template-columns: 40% 20% 40%;
-  grid-template-areas: "index logo icons";
-}
-
-.bi {
-  font-size: 1.5rem;
-  margin-right: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .index {
+  width: 100%;
   display: flex;
-  grid-area: index;
-  flex-grow: 1;
-  justify-content: left;
-  align-items: center;
+  flex-direction: row;
+  flex: 1;
+  gap: 30px;
+  margin: 1.7rem 5rem 2rem 5rem;
+}
+
+img {
+  height: 5rem;
 }
 
 .icon {
-  display: flex;
-  grid-area: icons;
-  flex-grow: 1;
-  justify-content: right;
-  align-items: center;
-}
-
-.logo {
-  grid-area: logo;
   width: 100%;
-  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex: 1;
+  margin: 0rem 3rem 0rem 0rem;
 }
 
-.index a {
-  margin-right: 40px;
+a {
+  color: black;
 }
 
-.btn {
-  background-color: white;
+a:hover {
+  background: lightgrey;
+  color: black;
+  cursor: pointer;
+}
+
+a.logo:hover {
+  background: none;
+  cursor: pointer;
+}
+
+ul{
+  display: flex;
+  list-style-type: none;
+}
+
+ul a {
+  padding: 1rem;
+  display: inline-block;
+}
+
+a span {
+  background: red;
+  color: white;
+  padding: 0.1rem 0.7rem;
+  border-radius:  100rem;
+  font-size: 1rem;
+}
+
+.menu-container{
+  position: relative;
 }
 
 .menu{
@@ -53,6 +75,7 @@ nav {
   display: block;
 }
 
-.menu-container{
-  position: relative;
+.bi {
+  font-size: 1.3rem;
 }
+

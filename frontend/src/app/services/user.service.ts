@@ -3,7 +3,7 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { User } from '../models/user';
 import { InterfaceUserLogin } from '../interfaces/InterfaceUserLogin';
 import { HttpClient } from '@angular/common/http';
-import { USER_LOGIN_URL, USER_REGISTER_URL } from '../urls';
+import { USER_BY_SEARCH_URL, USER_LOGIN_URL, USER_REGISTER_URL, USER_URL } from '../urls';
 import { ToastrService } from 'ngx-toastr';
 import { InterfaceUserRegister } from '../interfaces/InterfaceUserRegister';
 
@@ -71,5 +71,13 @@ export class UserService {
         }
       })
     )
+  }
+
+  getAll(): Observable<User[]> {
+    return this.http.get<User[]>(USER_URL);
+  }
+
+  getAllUserSearchTerm(searchTerm:string) {
+    return this.http.get<User[]>(USER_BY_SEARCH_URL + searchTerm);
   }
 }

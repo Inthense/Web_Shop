@@ -1,8 +1,11 @@
+.home {
+  display: flex;
+  justify-content: center;
+}
+
 img {
-  display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 200px;
-  height: 800px;
-  width: 100%;
+  flex: 1 0;
+  object-fit: cover;
+  height: 100%;
 }
 

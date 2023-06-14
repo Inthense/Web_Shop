@@ -25,9 +25,4 @@ export class OurProductsComponent {
       })
     })
   }
-
-  ngOnInit(): void {
-
-  }
-
 }

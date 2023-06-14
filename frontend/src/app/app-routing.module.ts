@@ -11,6 +11,7 @@ import { ItemsPageComponent } from './pages/items-page/items-page.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { UserSearchComponent } from './pages/user-search/user-search.component';
 
 const routes: Routes = [{
   path: 'home',
@@ -62,6 +63,14 @@ const routes: Routes = [{
 {
   path: 'admin-page',
   component: AdminPageComponent
+},
+{
+  path: 'admin-page/user-search',
+  component: UserSearchComponent
+},
+{
+  path: 'admin-page/user-search/:searchTerm',
+  component: UserSearchComponent
 },
 ];
 

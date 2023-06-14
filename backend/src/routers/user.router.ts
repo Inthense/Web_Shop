@@ -68,4 +68,19 @@ router.post('/register', asyncHandler(
     }
 ))
 
+router.get("/admin-page/user-search",asyncHandler(
+    async (req, res)=> {
+       const user = await UserModel.find();
+       res.send(user);
+   }
+));
+
+router.get("/admin-page/user-search/:searchTerm", asyncHandler(
+    async (req, res) => {
+        const searchRegExp = new RegExp(req.params.searchTerm, 'i');
+        const users = await UserModel.find({name: {$regex: searchRegExp}});
+        res.send(users);
+    }
+));
+
 export default router;
