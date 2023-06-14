@@ -80,4 +80,9 @@ export class UserService {
   getAllUserSearchTerm(searchTerm:string) {
     return this.http.get<User[]>(USER_BY_SEARCH_URL + searchTerm);
   }
+
+  deleteUser(userName: string):Observable<User> {
+    const url = `http://localhost:5000/api/users/admin-page/user-search/${userName}`;
+    return this.http.delete<User>(url);
+  }
 }

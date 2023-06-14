@@ -36,4 +36,18 @@ export class UserSearchComponent {
     this.router.navigateByUrl('/admin-page/user-search/'+term)
   }
 
+
+  deleteUser(userName: string): void {
+    this.userService.deleteUser(userName).subscribe({
+      next: () => {
+        console.log('Nutzer erfolgreich gelöscht.');
+      },
+      error: (error) => {
+        console.error('Fehler beim Löschen des Nutzers:', error);
+      },
+      complete: () => {
+      }
+    });
+    location.reload();
+  }
 }

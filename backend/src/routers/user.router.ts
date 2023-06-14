@@ -83,4 +83,11 @@ router.get("/admin-page/user-search/:searchTerm", asyncHandler(
     }
 ));
 
+router.delete("/admin-page/user-search/:name", asyncHandler(
+    async (req, res) => {
+      const name = req.params.name;
+      await UserModel.deleteOne({ name: name });
+    }
+  ));
+
 export default router;

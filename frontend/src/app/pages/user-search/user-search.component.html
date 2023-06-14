@@ -1,8 +1,18 @@
-<div>
+<!-- Sucheleiste -->
+<app-current-page title="Nutzer Suche" margin="1.5rem 0 0 2.5rem"></app-current-page>
+<div class="search-button">
   <input #s type="text" placeholder="Suche..." (keyup.enter)="search(s.value)" [value]="searchTerm"/>
   <button (click)="search(s.value)">Suche</button>
 </div>
-<app-current-page title="Our Products" margin="1.5rem 0 0 2.5rem"></app-current-page>
+<!-- Nutzer erstellen -->
+<a style="text-decoration: none; color: inherit;" routerLink="/admin-page/create-user">
+<div class="create-user">
+  <div class="add">
+    +
+  </div>
+  <span>Nutzer erstellen</span>
+</div>
+</a>
 <!-- Ausgabe der Daten -->
 <app-not-found
   [visible]="!user || !user.length"
@@ -10,8 +20,24 @@
 ></app-not-found>
 <ul>
   <li *ngFor="let users of user">
+    <a style="text-decoration: none; color: inherit;" routerLink="/admin-page/user-search/{{users.name}}">
+      <div class="content">
         <div class="name">
           {{users.name}}
         </div>
+        <div class="email">
+          {{users.email}}
+        </div>
+        <div class="address">
+          {{users.address}}
+        </div>
+        <div class="admin">
+          {{users.isAdmin}}
+        </div>
+      </div>
+    </a>
+    <div class="delete">
+    <button (click)="deleteUser(users.name)">Nutzer Löschen</button>
+  </div>
   </li>
 </ul>

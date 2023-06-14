@@ -1,4 +1,4 @@
-div {
+.search-button {
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
@@ -16,7 +16,7 @@ input {
   outline: none;
 }
 
-div button {
+.search-button button {
   color: grey;
   height: 3rem;
   width: 5rem;
@@ -32,4 +32,82 @@ div button {
 div button:hover {
   opacity: 1;
   cursor: pointer;
+}
+
+ul{
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+li {
+  height: 10rem;
+  width: 15rem;
+  border: 1px solid #2ba5c4;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  color: #2ba5c4;
+}
+
+li a:hover{
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.name::before {
+  content: "Name: ";
+  color: darkgrey;
+}
+
+.email::before {
+  content: "E-Mail: ";
+  color: darkgrey;
+}
+
+.address::before {
+  content: "Adresse: ";
+  color: darkgrey;
+}
+
+.admin::before {
+  content: "Admin: ";
+  color: darkgrey;
+}
+
+.create-user {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.add {
+  background: red;
+  color: white;
+  padding: 0.1rem 0.7rem;
+  border-radius:  1rem 0rem 0rem 1rem;
+  font-size: 1rem;
+}
+
+span {
+  font-size: larger;
+  background: red;
+  color: white;
+  padding: 0.1rem 0.7rem;
+  font-size: 1rem;
+  border-radius:  0rem 1rem 1rem 0rem;
+}
+
+.delete {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+button:last-child {
+
 }

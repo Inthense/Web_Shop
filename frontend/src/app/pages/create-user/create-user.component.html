@@ -1,0 +1,19 @@
+<div class="details"></div>
+  <app-current-page title="Nutzer erstellen"></app-current-page>
+  <!-- Name -->
+  <form [formGroup]="registerForm" (ngSubmit)="submit()">
+  <text-input [control]="fc.name" [showErrorsWhen]="isSubmitted" label="Name"></text-input>
+  <!-- E-Mail -->
+  <form [formGroup]="registerForm" (ngSubmit)="submit()"></form>
+  <text-input [control]="fc.email" [showErrorsWhen]="isSubmitted" label="E-Mail" type="email"></text-input>
+  <!-- Passwort -->
+  <form [formGroup]="registerForm" (ngSubmit)="submit()"></form>
+  <text-input [control]="fc.password" [showErrorsWhen]="isSubmitted" label="Passwort" type="password"></text-input>
+  <!-- Passwort bestätigen -->
+  <form [formGroup]="registerForm" (ngSubmit)="submit()"></form>
+  <text-input [control]="fc.confirmPassword" [showErrorsWhen]="isSubmitted" label="Passwort bestätigen" type="password"></text-input>
+  <!-- Adresse -->
+  <form [formGroup]="registerForm" (ngSubmit)="submit()"></form>
+  <text-input [control]="fc.address" [showErrorsWhen]="isSubmitted" label="Adresse" ></text-input>
+  <default-button text="Nutzer erstellen"></default-button>
+</form>
