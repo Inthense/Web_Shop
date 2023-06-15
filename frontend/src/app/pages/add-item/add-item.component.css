@@ -1,0 +1,15 @@
+.add-item {
+  display: flex;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+ display: flex;
+ flex-direction: column;
+}

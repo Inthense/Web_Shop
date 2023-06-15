@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { sample_items } from "../data";
 import asyncHandler from 'express-async-handler';
-import { ItemsModel } from "../models/items.model";
+import { Items, ItemsModel } from "../models/items.model";
 
 const router = Router();
 
@@ -38,5 +38,35 @@ router.get("/:itemsId",asyncHandler(
         res.send(items);
     }
 ))
+
+router.post('/add-item', asyncHandler (
+    async(req, res) => {
+        const {imageUrl, name, price, quantity} = req.body
+        const item = await ItemsModel.findOne({name});
+        if(item) {
+            res.status(400).send('Artikel schon vorhanden.');
+            return;
+        }
+
+        const newItem:Items = {
+            id:'',
+            imageUrl,
+            name,
+            price,
+            quantity,
+            rating: 0
+        }
+
+        const dbItem = await ItemsModel.create(newItem);
+    }
+))
+
+router.delete("/:itemsId", asyncHandler(
+    async (req, res) => {
+      const itemsId = req.params.id;
+      await ItemsModel.deleteOne({ itemsId: itemsId });
+    }
+  ));
+
 
 export default router;

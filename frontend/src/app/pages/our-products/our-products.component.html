@@ -35,5 +35,8 @@
         </div>
       </div>
     </a>
+    <div *ngIf="isAdmin">
+    <button (click)="deleteItem(item.id)">Produkt löschen</button>
+  </div>
   </li>
 </ul>

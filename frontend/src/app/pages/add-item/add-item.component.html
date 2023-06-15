@@ -1,0 +1,25 @@
+<app-our-products></app-our-products>
+<div class="add-item">
+  <div class="details">
+    <app-current-page title="Artikel Hinzufügen"></app-current-page>
+    <form (ngSubmit)="submit()">
+      <div>
+        <label for="imageUrl">Bild-URL:</label>
+        <input type="text" id="imageUrl" name="imageUrl" [(ngModel)]="item.imageUrl" required>
+      </div>
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="item.name" required>
+      </div>
+      <div>
+        <label for="price">Preis:</label>
+        <input type="number" id="price" name="price" [(ngModel)]="item.price" required>
+      </div>
+      <div>
+        <label for="quantity">Menge:</label>
+        <input type="number" id="quantity" name="quantity" [(ngModel)]="item.quantity" required>
+      </div>
+      <button type="submit">Artikel hinzufügen</button>
+    </form>
+  </div>
+</div>

@@ -12,7 +12,7 @@ export interface Items {
 export const ItemsSchema = new Schema<Items>({
     imageUrl: {type: String, required: true},
     name: {type: String, required: true},
-    rating: {type: Number, required: true},
+    rating: {type: Number, required: false},
     price: {type: Number, required: true},
     quantity: {type: Number, required: true},
     },{

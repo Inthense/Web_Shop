@@ -13,6 +13,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { UserSearchComponent } from './pages/user-search/user-search.component';
 import { CreateUserComponent } from './pages/create-user/create-user.component';
+import { AddItemComponent } from './pages/add-item/add-item.component';
 
 const routes: Routes = [{
   path: 'home',
@@ -76,6 +77,10 @@ const routes: Routes = [{
 {
   path: 'admin-page/create-user',
   component: CreateUserComponent
+},
+{
+  path: 'admin-page/add-item',
+  component: AddItemComponent
 },
 ];
 

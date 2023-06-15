@@ -16,7 +16,7 @@ import { ItemsPageComponent } from './pages/items-page/items-page.component';
 import { CurrentPageComponent } from './pages/current-page/current-page.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LoginComponent } from './pages/login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
@@ -27,6 +27,7 @@ import { InputContainerComponent } from './pages/parts/input-container/input-con
 import { DefaultButtonComponent } from './pages/parts/default-button/default-button.component';
 import { UserSearchComponent } from './pages/user-search/user-search.component';
 import { CreateUserComponent } from './pages/create-user/create-user.component';
+import { AddItemComponent } from './pages/add-item/add-item.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { CreateUserComponent } from './pages/create-user/create-user.component';
     InputContainerComponent,
     DefaultButtonComponent,
     UserSearchComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    AddItemComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,8 @@ import { CreateUserComponent } from './pages/create-user/create-user.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

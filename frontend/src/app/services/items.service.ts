@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Items } from '../models/items.model';
 import { HttpClient } from '@angular/common/http';
-import { ITEMS_URL, ITEMS_BY_SEARCH_URL, ITEMS_BY_ID_URL } from '../urls';
+import { ITEMS_URL, ITEMS_BY_SEARCH_URL, ITEMS_BY_ID_URL, ITEMS_ADD_URL } from '../urls';
 import { Observable } from 'rxjs';
+import { InterfaceItemAdd } from '../interfaces/InterfaceItemAdd';
 
 @Injectable({
   providedIn: 'root'
@@ -20,4 +21,17 @@ export class ItemsService {
   getItemsById(itemsId:string):Observable<Items> {
     return this.http.get<Items>(ITEMS_BY_ID_URL + itemsId);
   }
+
+  deleteItem(itemsId: string):Observable<Items> {
+    return this.http.delete<Items>(ITEMS_URL + '/' + itemsId);
+  }
+
+  addItem(itemAdd:InterfaceItemAdd):Observable<Items> {
+    return this.http.post<Items>(ITEMS_ADD_URL, itemAdd);
+  }
+
+  updateItem(itemsId:string, itemUpdate:InterfaceItemAdd):Observable<Items> {
+    return this.http.put<Items>(ITEMS_URL + '/' + itemsId, itemUpdate);
+  }
+
 }
