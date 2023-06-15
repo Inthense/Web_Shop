@@ -28,10 +28,9 @@
         {{items.id}}
     </div>
     <button (click)="addToCart()">Zum Einkaufswagen Hinzufügen</button>
+    <div class="deleteItem" *ngIf="isAdmin">
+      <button (click)="deleteItem(items.id)">Produkt löschen</button>
+    </div>
     </div>
   </div>
-</div>
-<span class="comment-text">Kommentare</span>
-<div class="comments">
-  <textarea>Sample Text</textarea>
 </div>

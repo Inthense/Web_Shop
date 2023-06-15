@@ -15,7 +15,7 @@ export class OurProductsComponent {
 
   items:Items[] = [];
   user!:User;
-  constructor(private itemsService:ItemsService, activatedRoute:ActivatedRoute, private userService:UserService) {
+  constructor(private itemsService:ItemsService, activatedRoute:ActivatedRoute) {
       let itemsObservable:Observable<Items[]>;
       activatedRoute.params.subscribe((params) => {
       if(params.searchTerm)
@@ -26,29 +26,7 @@ export class OurProductsComponent {
       itemsObservable.subscribe((serverItems) => {
         this.items = serverItems;
 
-      userService.userObservable.subscribe((newUser) => {
-        this.user = newUser;
-        })
-
       })
     })
   }
-
-  deleteItem(itemsId: string): void {
-    this.itemsService.deleteItem(itemsId).subscribe({
-      next: () => {
-        console.log('Nutzer erfolgreich gelöscht.');
-      },
-      error: (error) => {
-        console.error('Fehler beim Löschen des Nutzers:', error);
-      },
-      complete: () => {
-      }
-    });
-    location.reload();
-  }
-
-  get isAdmin() {
-    return this.user.isAdmin;
-    }
 }
