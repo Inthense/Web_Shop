@@ -12,11 +12,15 @@ import { UserService } from 'src/app/services/user.service';
 export class UserSearchComponent {
 
   user:User[] = [];
+  user_admin!:User;
   searchTerm = '';
   constructor(private userService:UserService, activatedRoute:ActivatedRoute, private router:Router) {
     activatedRoute.params.subscribe((params) => {
       if(params.searchTerm)
       this.searchTerm = params.searchTerm;
+    })
+    userService.userObservable.subscribe((newUser) => {
+      this.user_admin = newUser;
     })
       let itemsObservable:Observable<User[]>;
       activatedRoute.params.subscribe((params) => {
@@ -50,4 +54,8 @@ export class UserSearchComponent {
     });
     location.reload();
   }
+
+  get isAdmin() {
+    return this.user_admin.isAdmin;
+    }
 }

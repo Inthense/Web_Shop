@@ -61,10 +61,10 @@ router.post('/add-item', asyncHandler (
     }
 ))
 
-router.delete("/:itemsId", asyncHandler(
+router.delete("/search/:name", asyncHandler(
     async (req, res) => {
-      const itemsId = req.params.id;
-      await ItemsModel.deleteOne({ itemsId: itemsId });
+      const name = req.params.name;
+      await ItemsModel.deleteOne({ name: name });
     }
   ));
 

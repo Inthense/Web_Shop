@@ -13,8 +13,10 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./items-page.component.css']
 })
 export class ItemsPageComponent {
+
   items!: Items;
   user!:User;
+
   constructor(activatedRoute:ActivatedRoute,private itemsService:ItemsService,private cartService:CartService, private router: Router, private userService:UserService) {
     let itemsObservable:Observable<Items>;
     activatedRoute.params.subscribe((params) => {
@@ -38,13 +40,13 @@ export class ItemsPageComponent {
     this.router.navigateByUrl('/cart');
   }
 
-  deleteItem(itemsId: string): void {
-    this.itemsService.deleteItem(itemsId).subscribe({
+  deleteItem(name: string): void {
+    this.itemsService.deleteItem(name).subscribe({
       next: () => {
-        console.log('Nutzer erfolgreich gelöscht.');
+        console.log('Artikel erfolgreich gelöscht.');
       },
       error: (error) => {
-        console.error('Fehler beim Löschen des Nutzers:', error);
+        console.error('Fehler beim Löschen des Artikels:', error);
       },
       complete: () => {
       }

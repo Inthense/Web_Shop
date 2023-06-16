@@ -46,7 +46,17 @@ img {
   color: darkgrey;
 }
 
-button {
+.quantity::before {
+  content: "Verfügbar: ";
+  color: darkgrey;
+}
+
+.number::before {
+  content: "Anzahl: ";
+  color: darkgrey;
+}
+
+.add-to-cart button {
   width: 100%;
   margin-top: 1rem;
   color: white;
@@ -79,4 +89,16 @@ textarea {
   height: 30rem;
   margin-bottom: 5rem;
   margin-left: 10rem;
+}
+
+.delete-item button {
+  width: 100%;
+  margin-top: 1rem;
+  color: white;
+  background: #ED2B2A;
+  border: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  outline: none;
 }

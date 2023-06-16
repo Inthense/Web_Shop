@@ -1,7 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { InterfaceItemAdd } from 'src/app/interfaces/InterfaceItemAdd';
 import { ItemsService } from 'src/app/services/items.service';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,25 +11,40 @@ import { Router } from '@angular/router';
 })
 export class AddItemComponent {
 
-  item: InterfaceItemAdd = {
-    imageUrl: '',
-    name: '',
-    price: 0,
-    quantity: 0
-  };
 
-  constructor(private itemService:ItemsService, private router:Router) {}
+  itemForm!: FormGroup;
+  isSubmitted = false;
 
+
+  constructor(private itemService:ItemsService, private router:Router, private formBuilder:FormBuilder) {}
+
+
+  ngOnInit():void {
+    this.itemForm = this.formBuilder.group({
+      imageUrl: ['', [Validators.required]],
+      name: ['', [Validators.required]],
+      price: ['', [Validators.required]],
+      quantity: ['', [Validators.required]],
+    });
+  }
+
+  get fc() {
+    return this.itemForm.controls;
+  }
 
   submit() {
-    this.itemService.addItem(this.item).subscribe(
-      next => {
-        console.log('Artikel erfolgreich hinzugefügt:');
-      },
-      error => {
-        console.error('Fehler beim Hinzufügen des Artikels:', error);
-      }
-    );
+    this.isSubmitted = true;
+    if(this,this.itemForm.invalid)
+    return;
+    const fv = this.itemForm.value;
+    const item:InterfaceItemAdd = {
+      imageUrl: fv.imageUrl,
+      name: fv.name,
+      price: fv.price,
+      quantity: fv.quantity
+    };
+    this.itemService.addItem(item).subscribe(_ => {
+    })
     location.reload();
   }
 

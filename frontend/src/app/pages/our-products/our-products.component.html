@@ -1,6 +1,4 @@
 <app-current-page title="Our Products" margin="1.5rem 0 0 2.5rem"></app-current-page>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- Ausgabe der Daten -->
 <app-not-found
   [visible]="!items || !items.length"
   resetLinkText="Hier gibt es nichts zu sehen..."
@@ -14,11 +12,7 @@
           {{item.name}}
         </div>
         <div class="rating">
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
+          <star-rating [stars]="item.rating"></star-rating>
         </div>
         <div class="product-item-footer">
         </div>
@@ -29,9 +23,6 @@
         </div>
         <div class="quantity">
             {{item.quantity}}
-        </div>
-        <div class="id">
-            {{item.id}}
         </div>
       </div>
     </a>

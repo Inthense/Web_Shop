@@ -1,15 +1,23 @@
 .add-item {
   display: flex;
-  margin-top: 2rem;
   justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 3rem;
 }
 
 .details {
-  display: flex;
-  flex-direction: column;
+  width: 25rem;
 }
 
-form {
- display: flex;
- flex-direction: column;
+button {
+  width: 100%;
+  margin-top: 1rem;
+  color: white;
+  background: #2ba5c4;
+  border: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  outline: none;
 }

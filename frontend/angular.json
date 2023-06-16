@@ -89,7 +89,7 @@
             ],
             "styles": [
               "src/styles.css",
-              "node-modules/ngx-toastr/toastr.css"
+              "node_modules/ngx-toastr"
             ],
             "scripts": []
           }

@@ -5,7 +5,7 @@ export const sample_items: any[] = [
     price: 100,
     quantity: 1,
     id: 'ABC',
-    rating: 3,
+    rating: 4.5,
   },
   {
     imageUrl: 'assets/img/products/product1.png',

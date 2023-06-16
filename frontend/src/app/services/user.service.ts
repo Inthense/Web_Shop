@@ -29,7 +29,7 @@ export class UserService {
           this.userSubject.next(user);
           this.toastrService.success(
             `Wilkommen zum Web Shop ${user.name}.`,
-            'Erfolgreich eingeloggt.'
+            'Erfolgreich eingeloggt.',
           )
         },
         error: (errorResponse) => {

@@ -5,7 +5,11 @@ const VALIDATOR_MESSAGES: any = {
   required: 'Darf nicht leer sein',
   email: 'Die E-Mail ist nicht richtig eingegeben',
   minLength: 'Eingabe zu kurz.',
-  doNotMatch: 'Passwörter stimmen nicht überein'
+  doNotMatch: 'Passwörter stimmen nicht überein',
+  imageUrl: 'Feld darf nicht leer sein',
+  name: 'Feld darf nicht leer sein',
+  price: 'Feld darf nicht leer sein',
+  quantity: 'Feld darf nicht leer sein',
 }
 
 @Component({

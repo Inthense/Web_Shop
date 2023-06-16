@@ -1,22 +1,11 @@
 <div class="login">
   <div class="details">
     <app-current-page title="Login"></app-current-page>
-
     <form [formGroup]="loginForm" (ngSubmit)="submit()">
-      <div class="input-email">
-        <label>E-Mail</label>
-        <div>
-          <input type="email" placeholder="E-Mail" formControlName="email"/>
-        </div>
-      </div>
-      <div class="input-password">
-        <label>E-Mail</label>
-        <div>
-          <input type="password" placeholder="Passwort" formControlName="password"/>
-        </div>
-      </div>
+      <text-input [control]="fc.email" [showErrorsWhen]="isSubmitted" type="email" label="E-Mail"></text-input>
+      <text-input [control]="fc.password" [showErrorsWhen]="isSubmitted" type="password" label="Passwort"></text-input>
       <div class="button">
-        <button type="submit">Login</button>
+        <default-button text="Login"></default-button>
       </div>
     </form>
   </div>

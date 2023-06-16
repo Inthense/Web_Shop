@@ -8,7 +8,7 @@ import { User } from "../models/user";
   templateUrl: './navigation-bar.component.html',
   styleUrls: ['./navigation-bar.component.css']
 })
-export class NavigationBarComponent implements OnInit {
+export class NavigationBarComponent {
   cartQuantity=0;
   user!:User;
   constructor(cartService:CartService,private userService:UserService) {
@@ -18,9 +18,6 @@ export class NavigationBarComponent implements OnInit {
     userService.userObservable.subscribe((newUser) => {
       this.user = newUser;
     })
-  }
-
-  ngOnInit(): void {
   }
 
   logout() {

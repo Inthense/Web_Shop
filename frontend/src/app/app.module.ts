@@ -28,6 +28,7 @@ import { DefaultButtonComponent } from './pages/parts/default-button/default-but
 import { UserSearchComponent } from './pages/user-search/user-search.component';
 import { CreateUserComponent } from './pages/create-user/create-user.component';
 import { AddItemComponent } from './pages/add-item/add-item.component';
+import { StarRatingComponent } from './pages/parts/star-rating/star-rating.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { AddItemComponent } from './pages/add-item/add-item.component';
     DefaultButtonComponent,
     UserSearchComponent,
     CreateUserComponent,
-    AddItemComponent
+    AddItemComponent,
+    StarRatingComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,9 @@ import { AddItemComponent } from './pages/add-item/add-item.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-center'
+    }),
     FormsModule
   ],
   providers: [],
