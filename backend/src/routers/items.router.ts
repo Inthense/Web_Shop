@@ -67,6 +67,15 @@ router.delete("/search/:name", asyncHandler(
       await ItemsModel.deleteOne({ name: name });
     }
   ));
+  
+  router.put("/:itemsId", asyncHandler(
+    async (req, res) => {
+      const itemsId = req.params.itemsId;
+      const itemUpdate: Items = req.body;
+      const updatedItem = await ItemsModel.findByIdAndUpdate(itemsId, itemUpdate, { new: true });
+      res.send(updatedItem);
+    }
+  ));
 
 
 export default router;

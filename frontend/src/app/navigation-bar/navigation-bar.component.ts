@@ -9,8 +9,11 @@ import { User } from "../models/user";
   styleUrls: ['./navigation-bar.component.css']
 })
 export class NavigationBarComponent {
+
   cartQuantity=0;
   user!:User;
+  menuCollapsed = false;
+
   constructor(cartService:CartService,private userService:UserService) {
     cartService.getCartObservable().subscribe((newCart)=> {
       this.cartQuantity=newCart.countSum;
@@ -18,6 +21,10 @@ export class NavigationBarComponent {
     userService.userObservable.subscribe((newUser) => {
       this.user = newUser;
     })
+  }
+
+  toggleMenu() {
+    this.menuCollapsed = !this.menuCollapsed;
   }
 
   logout() {

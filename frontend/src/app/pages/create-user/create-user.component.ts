@@ -48,8 +48,8 @@ export class CreateUserComponent {
         confirmPassword: fv.confirmPassword,
         address: fv.address
       };
-      this.userService.register(user).subscribe(_ => {
-        this.router.navigateByUrl(this.returnUrl);
+      this.userService.createUser(user).subscribe(_ => {
+        // this.router.navigateByUrl(this.returnUrl);
       })
     }
 

@@ -42,15 +42,8 @@ export class UserSearchComponent {
 
 
   deleteUser(userName: string): void {
-    this.userService.deleteUser(userName).subscribe({
-      next: () => {
-        console.log('Nutzer erfolgreich gelöscht.');
-      },
-      error: (error) => {
-        console.error('Fehler beim Löschen des Nutzers:', error);
-      },
-      complete: () => {
-      }
+    console.log(userName);
+    this.userService.deleteUser(userName).subscribe(() => {
     });
     location.reload();
   }

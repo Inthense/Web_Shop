@@ -2,7 +2,9 @@ import { Component, NgModule } from '@angular/core';
 import { InterfaceItemAdd } from 'src/app/interfaces/InterfaceItemAdd';
 import { ItemsService } from 'src/app/services/items.service';
 import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Items } from 'src/app/models/items.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-add-item',
@@ -14,9 +16,22 @@ export class AddItemComponent {
 
   itemForm!: FormGroup;
   isSubmitted = false;
+  items:Items[] = [];
 
+  constructor(private itemService:ItemsService, private router:Router, private formBuilder:FormBuilder,
+    private itemsService:ItemsService, activatedRoute:ActivatedRoute) {
+    let itemsObservable:Observable<Items[]>;
+    activatedRoute.params.subscribe((params) => {
+    if(params.searchTerm)
+    itemsObservable = this.itemsService.getAllItemsSearchTerm(params.searchTerm)
+    else
+    itemsObservable=itemsService.getAll();
 
-  constructor(private itemService:ItemsService, private router:Router, private formBuilder:FormBuilder) {}
+    itemsObservable.subscribe((serverItems) => {
+      this.items = serverItems;
+    })
+  })
+}
 
 
   ngOnInit():void {
@@ -47,5 +62,4 @@ export class AddItemComponent {
     })
     location.reload();
   }
-
 }

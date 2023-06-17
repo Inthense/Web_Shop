@@ -30,12 +30,33 @@ img {
   margin-left: 1rem;
 }
 
+.details .edit {
+  margin-left: 15rem;
+  border: 1rem;
+  color: black;
+  font-size: 1.5rem;
+}
+
 .name {
+  display: flex;
+  flex-direction: row;
   font-size: 2rem;
   font-weight: bold;
 }
 
+
+.name input {
+  margin-left: 2rem;
+  background: lightgrey;
+  border: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 1rem 1rem 1rem 1rem;
+  outline: none;
+}
+
 .price {
+  display: flex;
   font-size: 1.8rem;
   margin: 2rem 2rem 2rem 0;
   color: green;
@@ -46,13 +67,34 @@ img {
   color: darkgrey;
 }
 
-.quantity::before {
-  content: "Verfügbar: ";
-  color: darkgrey;
+.price input {
+  margin-left: 2rem;
+  background: lightgrey;
+  border: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 1rem 1rem 1rem 1rem;
+  outline: none;
 }
 
-.number::before {
-  content: "Anzahl: ";
+.quantity {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.quantity input {
+  margin-left: 3rem;
+  background: lightgrey;
+  border: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 1rem 1rem 1rem 1rem;
+  outline: none;
+}
+
+.quantity::before {
+  content: "Verfügbar: ";
   color: darkgrey;
 }
 

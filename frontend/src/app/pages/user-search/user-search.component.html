@@ -2,11 +2,11 @@
 <!-- Sucheleiste -->
 <app-current-page title="Nutzer Suche" margin="1.5rem 0 0 2.5rem"></app-current-page>
 <div class="search-button">
+  <a class="delete-btn" style="text-decoration: none;" routerLink="/admin-page/user-search">X</a>
   <input #s type="text" placeholder="Suche..." (keyup.enter)="search(s.value)" [value]="searchTerm"/>
   <button (click)="search(s.value)">Suche</button>
 </div>
 <!-- Nutzer erstellen -->
-
 <div class="create-user">
   <a style="text-decoration: none; color: inherit;" routerLink="/admin-page/create-user">
   <span>+ Nutzer erstellen</span>

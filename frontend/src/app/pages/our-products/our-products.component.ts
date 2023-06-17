@@ -25,7 +25,6 @@ export class OurProductsComponent {
 
       itemsObservable.subscribe((serverItems) => {
         this.items = serverItems;
-
       })
     })
   }

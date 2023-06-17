@@ -8,26 +8,30 @@
 <div *ngIf="items" class="items">
   <img [src]="items.imageUrl" [alt]="items.name"/>
   <div class="details">
+    <div *ngIf="isAdmin" class="edit">
+      Editieren:
+  </div>
       <span class="name">
         {{items.name}}
+        <input *ngIf="isAdmin" type="text" [value]="items.name" [id]="items.id + '-name'">
       </span>
       <div class="rating">
         <star-rating [stars]="items.rating"></star-rating>
       </div>
       <div class="price">
         {{items.price | currency:"EUR"}}
+        <input *ngIf="isAdmin" type="number" [value]="items.price" [id]="items.id + '-price'">
       </div>
       <div class="quantity">
         {{items.quantity}}
-      </div>
-      <div class="number">
-        {{items.quantity}}
+        <input *ngIf="isAdmin" type="number" [value]="items.quantity" [id]="items.id + '-quantity'">
       </div>
     <div class="add-to-cart">
     <button (click)="addToCart()">Zum Einkaufswagen Hinzufügen</button>
     <div class="delete-item" *ngIf="isAdmin">
       <button (click)="deleteItem(items.name)">Produkt löschen</button>
     </div>
+    <button *ngIf="isAdmin" (click)="editItem(items.id)">Update</button>
     </div>
   </div>
 </div>

@@ -1,81 +1,128 @@
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+/* mobile / tablet */
+@media only screen and (max-width: 1149px) {
+
+  .mobile-menu{
+    /*position:fixed;*/
+    z-index:1;
+    width: 100%;
+  }
+
+  .mobile-menu-collapsed{
+    background:rgba(211,211,211, 0.7);
+  }
+
+  .mobile-header-icon-container{
+    text-align: center;
+  }
+  .mobile-header-icon{
+    width: 5rem;
+    height: 5rem;
+    text-align: center;
+  }
+
+  .desktop-menu{
+    display: none;
+  }
+
+  .btn-mobile-menu{
+    background-color: #2ba5c4;
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .mobile-menu-item{
+    color: #2ba5c4;
+  }
+
 }
 
-.index {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex: 1;
-  gap: 30px;
-  margin: 1.7rem 5rem 2rem 5rem;
-}
+/* desktop*/
+@media only screen and (min-width: 1150px) {
 
-img {
-  height: 5rem;
-}
+  .mobile-menu{
+    display: none;
+  }
 
-.icon {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  flex: 1;
-  margin: 0rem 3rem 0rem 0rem;
-}
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 
-a {
-  color: black;
-}
+  .index {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    gap: 30px;
+    margin: 1.7rem 5rem 2rem 5rem;
+  }
 
-a:hover {
-  background: lightgrey;
-  color: black;
-  cursor: pointer;
-}
+  img {
+    height: 5rem;
+  }
 
-a.logo:hover {
-  background: none;
-  cursor: pointer;
-}
+  .icon {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex: 1;
+    margin: 0rem 3rem 0rem 0rem;
+  }
 
-ul{
-  display: flex;
-  list-style-type: none;
-}
+  a {
+    color: black;
+  }
 
-ul a {
-  padding: 1rem;
-  display: inline-block;
-}
+  a:hover {
+    background: lightgrey;
+    color: black;
+    cursor: pointer;
+  }
 
-a span {
-  background: #ED2B2A;
-  color: white;
-  padding: 0.1rem 0.7rem;
-  border-radius:  100rem;
-  font-size: 1rem;
-}
+  a.logo:hover {
+    background: none;
+    cursor: pointer;
+  }
 
-.menu-container{
-  position: relative;
-}
+  ul{
+    display: flex;
+    list-style-type: none;
+  }
 
-.menu{
-  position:absolute;
-  z-index:1;
-  background:whitesmoke;
-  display: none;
-}
+  ul a {
+    padding: 1rem;
+    display: inline-block;
+  }
 
-.menu-container:hover .menu {
-  display: block;
-}
+  a span {
+    background: #ED2B2A;
+    color: white;
+    padding: 0.1rem 0.7rem;
+    border-radius:  100rem;
+    font-size: 1rem;
+  }
 
-.bi {
-  font-size: 1.3rem;
-}
+  .menu-container{
+    position: relative;
+  }
 
+  .menu{
+    position:absolute;
+    z-index:1;
+    background:whitesmoke;
+    display: none;
+  }
+
+  .menu-container:hover .menu {
+    display: block;
+  }
+
+  .bi {
+    font-size: 1.3rem;
+  }
+
+
+}

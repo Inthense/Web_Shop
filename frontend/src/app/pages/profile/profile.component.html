@@ -1,2 +1,15 @@
-<app-current-page></app-current-page>
-<p>profile works!</p>
+<app-current-page title="Profil"></app-current-page>
+<div class="profile">
+  <div class="name">
+    <label>Name:</label>
+    {{user.name}}
+  </div>
+  <div class="email">
+    <label>E-Mail:</label>
+    {{user.email}}
+  </div>
+  <div class="address">
+    <label>Stadt:</label>
+    {{user.address}}
+  </div>
+</div>

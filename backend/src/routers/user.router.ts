@@ -68,6 +68,30 @@ router.post('/register', asyncHandler(
     }
 ))
 
+router.post('/admin-page/create-user', asyncHandler(
+    async (req, res) => {
+        const { name, email, password, address } = req.body;
+        const user = await UserModel.findOne({email});
+        if(user) {
+            res.status(400).send("Ein Nutzer für diese E-Mail Adresse ist bereits vorhanden.");
+            return
+        }
+
+        const encryptedPassword = await bcrypt.hash(password, 10);
+        const newUser: User = {
+            id: '',
+            name,
+            email: email.toLowerCase(),
+            password: encryptedPassword,
+            address,
+            isAdmin: false,
+            token: '',
+        }
+
+        const dbUser = await UserModel.create(newUser);
+    }
+))
+
 router.get("/admin-page/user-search",asyncHandler(
     async (req, res)=> {
        const user = await UserModel.find();
@@ -83,11 +107,13 @@ router.get("/admin-page/user-search/:searchTerm", asyncHandler(
     }
 ));
 
+
 router.delete("/admin-page/user-search/:name", asyncHandler(
     async (req, res) => {
       const name = req.params.name;
       await UserModel.deleteOne({ name: name });
-    }
+    },
   ));
+
 
 export default router;
