@@ -14,6 +14,7 @@ import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { UserSearchComponent } from './pages/user-search/user-search.component';
 import { CreateUserComponent } from './pages/create-user/create-user.component';
 import { AddItemComponent } from './pages/add-item/add-item.component';
+import { CommentComponent } from './pages/comment/comment.component';
 
 const routes: Routes = [{
   path: 'home',

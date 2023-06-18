@@ -14,6 +14,7 @@ export class UserSearchComponent {
   user:User[] = [];
   user_admin!:User;
   searchTerm = '';
+
   constructor(private userService:UserService, activatedRoute:ActivatedRoute, private router:Router) {
     activatedRoute.params.subscribe((params) => {
       if(params.searchTerm)

@@ -40,3 +40,15 @@ export const sample_users: any[] = [
     isAdmin: false,
   }
 ]
+
+
+export const sample_comments: any[] = [
+  {
+    name: 'Joe',
+    comment: 'Hallo das Produkt war ziemlich schlecht'
+  },
+  {
+    name: 'Anton',
+    comment: 'Produkt gut'
+  },
+]

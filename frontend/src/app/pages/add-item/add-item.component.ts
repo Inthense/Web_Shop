@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { InterfaceItemAdd } from 'src/app/interfaces/InterfaceItemAdd';
 import { ItemsService } from 'src/app/services/items.service';
 import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
@@ -13,7 +13,7 @@ import { User } from 'src/app/models/user.model';
   templateUrl: './add-item.component.html',
   styleUrls: ['./add-item.component.css']
 })
-export class AddItemComponent {
+export class AddItemComponent implements OnInit {
 
 
   itemForm!: FormGroup;

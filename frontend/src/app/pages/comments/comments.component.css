@@ -1,0 +1,31 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 1rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.name {
+  display: flex;
+  flex-direction: row;
+}
+
+.name::before {
+  content: "Name: ";
+  color: darkgrey;
+}
+
+.comment {
+  display: flex;
+  flex-direction: row;
+}
+
+.comment::before {
+  content: "Kommentar: ";
+  color: darkgrey;
+}

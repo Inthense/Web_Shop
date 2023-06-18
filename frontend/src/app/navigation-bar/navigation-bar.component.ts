@@ -14,7 +14,7 @@ export class NavigationBarComponent {
   user!:User;
   menuCollapsed = false;
 
-  constructor(cartService:CartService,private userService:UserService) {
+  constructor(cartService:CartService, private userService:UserService) {
     cartService.getCartObservable().subscribe((newCart)=> {
       this.cartQuantity=newCart.countSum;
     })

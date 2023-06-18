@@ -2,9 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Items } from 'src/app/models/items.model';
-import { User } from 'src/app/models/user.model';
 import { ItemsService } from 'src/app/services/items.service';
-import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-our-products',
@@ -14,7 +12,7 @@ import { UserService } from 'src/app/services/user.service';
 export class OurProductsComponent {
 
   items:Items[] = [];
-  user!:User;
+
   constructor(private itemsService:ItemsService, activatedRoute:ActivatedRoute) {
       let itemsObservable:Observable<Items[]>;
       activatedRoute.params.subscribe((params) => {

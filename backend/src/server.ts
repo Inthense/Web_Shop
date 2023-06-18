@@ -5,6 +5,7 @@ import express from "express";
 import cors from "cors";
 import itemsRouter from './routers/items.router';
 import userRouter from './routers/user.router';
+import commentRouter from './routers/comment.router';
 import { dbConnect } from './configs/database.config';
 dbConnect();
 
@@ -17,6 +18,7 @@ app.use(cors({
 
 app.use("/api/items", itemsRouter);
 app.use("/api/users", userRouter);
+app.use("/api/comments", commentRouter);
 
 const port = 5000;
 app.listen(port, () => {

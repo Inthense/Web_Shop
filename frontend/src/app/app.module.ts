@@ -29,6 +29,8 @@ import { UserSearchComponent } from './pages/user-search/user-search.component';
 import { CreateUserComponent } from './pages/create-user/create-user.component';
 import { AddItemComponent } from './pages/add-item/add-item.component';
 import { StarRatingComponent } from './pages/parts/star-rating/star-rating.component';
+import { CommentsComponent } from './pages/comments/comments.component';
+import { CommentComponent } from './pages/comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { StarRatingComponent } from './pages/parts/star-rating/star-rating.compo
     UserSearchComponent,
     CreateUserComponent,
     AddItemComponent,
-    StarRatingComponent
+    StarRatingComponent,
+    CommentsComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,

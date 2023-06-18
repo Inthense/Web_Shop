@@ -9,3 +9,6 @@ export const USER_URL = BASE_URL + '/api/users/admin-page/user-search';
 export const USER_BY_SEARCH_URL = USER_URL + '/';
 export const ITEMS_ADD_URL = BASE_URL + '/api/items/add-item';
 export const CREATE_USER_URL = BASE_URL + '/api/users/admin-page/create-user';
+export const COMMENTS_URL = BASE_URL + '/api/comments';
+export const COMMENTS_BY_ID_URL = COMMENTS_URL + '/';
+export const COMMENT_ADD_URL = BASE_URL + '/api/comments/add-comment';
