@@ -49,8 +49,8 @@ export class CreateUserComponent {
         address: fv.address
       };
       this.userService.createUser(user).subscribe(_ => {
-        // this.router.navigateByUrl(this.returnUrl);
       })
+      this.router.navigate(['/admin-page']);
     }
 
 }

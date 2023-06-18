@@ -26,10 +26,6 @@ export class ItemsService {
     return this.http.delete<Items>(ITEMS_BY_SEARCH_URL + name);
   }
 
-  // addItem(itemAdd:InterfaceItemAdd):Observable<Items> {
-  //   return this.http.post<Items>(ITEMS_ADD_URL, itemAdd);
-  // }
-
   updateItem(itemsId:string, itemUpdate:InterfaceItemAdd):Observable<Items> {
     return this.http.put<Items>(ITEMS_URL + '/' + itemsId, itemUpdate);
   }

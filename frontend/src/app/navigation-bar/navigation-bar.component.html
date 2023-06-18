@@ -1,8 +1,7 @@
 <nav class="desktop-menu">
   <div class="index">
     <a style="text-decoration: none; color: inherit;" routerLink="/our-products">OUR PRODUCTS</a>
-    <a style="text-decoration: none; color: inherit;" routerLink="/discover">DISCOVER</a>
-    <a style="text-decoration: none; color: inherit;" routerLink="/earn-rewards">EARN REWARDS</a>
+    <a style="text-decoration: none; color: inherit;" routerLink="/sales">SALES</a>
   </div>
   <a class="logo" routerLink="/home">
     <img class="header-icon" src="assets/img/logo.png">
@@ -53,13 +52,34 @@
   <div *ngIf="menuCollapsed" class="mobile-menu-content" >
     <ul>
       <li class="mobile-menu-item">
-        <a style="text-decoration: none; color: inherit;" routerLink="/our-products">OUR PRODUCTS</a>
+        <a style="text-decoration: none; color: inherit;" routerLink="/home">Home</a>
       </li>
       <li class="mobile-menu-item">
-        <a style="text-decoration: none; color: inherit;" routerLink="/discover">DISCOVER</a>
+        <a style="text-decoration: none; color: inherit;" routerLink="/our-products">Our Products</a>
       </li>
       <li class="mobile-menu-item">
-        <a style="text-decoration: none; color: inherit;" routerLink="/earn-rewards">EARN REWARDS</a>
+        <a style="text-decoration: none; color: inherit;" routerLink="/sales">Sales</a>
+      </li>
+      <li *ngIf="isAuth" class="mobile-menu-item">
+        <a style="text-decoration: none; color: inherit;" routerLink="/profile">Profil</a>
+      </li>
+      <li class="mobile-menu-item">
+        <a style="text-decoration: none; color: inherit;" routerLink="/search">Suche</a>
+      </li>
+      <li *ngIf="!isAuth" class="mobile-menu-item">
+        <a style="text-decoration: none; color: inherit;" routerLink="/login">Login</a>
+      </li>
+      <li *ngIf="!isAuth" class="mobile-menu-item">
+        <a style="text-decoration: none; color: inherit;" routerLink="/register">Registrieren</a>
+      </li>
+      <li *ngIf="isAdmin" class="mobile-menu-item">
+        <a style="text-decoration: none; color: inherit;" routerLink="/admin-page">Admin-Seite</a>
+      </li>
+      <li *ngIf="isAuth" class="mobile-menu-item">
+        <a (click)="logout()">Logout</a>
+      </li>
+      <li class="mobile-menu-item">
+        <a style="text-decoration: none; color: inherit;" routerLink="/cart">Einkaufswagen<span *ngIf="cartQuantity">{{cartQuantity}}</span></a>
       </li>
     </ul>
   </div>

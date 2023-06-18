@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
-import { User } from '../models/user';
+import { User } from '../models/user.model';
 import { InterfaceUserLogin } from '../interfaces/InterfaceUserLogin';
 import { HttpClient } from '@angular/common/http';
 import { CREATE_USER_URL, USER_BY_SEARCH_URL, USER_LOGIN_URL, USER_REGISTER_URL, USER_URL } from '../urls';

@@ -1,15 +1,19 @@
 <app-current-page title="Profil"></app-current-page>
 <div class="profile">
   <div class="name">
-    <label>Name:</label>
-    {{user.name}}
+    <label class="name-label">Name:</label>
+      {{user.name}}
   </div>
   <div class="email">
-    <label>E-Mail:</label>
-    {{user.email}}
+    <label class="email-label">E-Mail:</label>
+    <div class="email-output">
+      {{user.email}}
+    </div>
   </div>
   <div class="address">
-    <label>Stadt:</label>
-    {{user.address}}
+    <label class="address-label">Stadt:</label>
+    <div class="address-output">
+      {{user.address}}
+    </div>
   </div>
 </div>

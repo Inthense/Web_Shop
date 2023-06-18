@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Items } from 'src/app/models/items.model';
-import { User } from 'src/app/models/user';
+import { User } from 'src/app/models/user.model';
 import { ItemsService } from 'src/app/services/items.service';
 import { UserService } from 'src/app/services/user.service';
 

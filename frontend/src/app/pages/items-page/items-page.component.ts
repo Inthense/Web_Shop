@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
 import { InterfaceItemAdd } from 'src/app/interfaces/InterfaceItemAdd';
 import { Items } from 'src/app/models/items.model';
-import { User } from 'src/app/models/user';
+import { User } from 'src/app/models/user.model';
 import { CartService } from 'src/app/services/cart.service';
 import { ItemsService } from 'src/app/services/items.service';
 import { UserService } from 'src/app/services/user.service';
@@ -55,14 +55,12 @@ export class ItemsPageComponent {
       }, (error) => {
         console.error('Fehler beim Löschen des Artikels:', error);
     });
-    location.reload();
+    this.router.navigate(['/admin-page/add-item']);
   }
-
-
 
   editItem(itemId: string) {
     const updatedItem: InterfaceItemAdd = {
-      imageUrl: 'assets/img/products/product1.png',
+      imageUrl: '/assets/img/products/sample.jpg',
       name: '',
       price: 0,
       quantity: 0

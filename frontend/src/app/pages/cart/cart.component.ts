@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Cart } from 'src/app/models/Cart';
-import { CartItem } from 'src/app/models/CartItem';
+import { Cart } from 'src/app/models/cart.model';
+import { CartItem } from 'src/app/models/cartItem.model';
 import { Items } from 'src/app/models/items.model';
 import { CartService } from 'src/app/services/cart.service';
 import { ItemsService } from 'src/app/services/items.service';
@@ -37,8 +37,14 @@ export class CartComponent {
     this.cartService.removeFromCart(cartItem.item.id);
   }
 
+  changeQuantity(cartItem:CartItem, quantityString:string) {
+    // convert to Int
+    const quantity = parseInt(quantityString);
+    this.cartService.changeQuantity(cartItem.item.id, quantity);
+  }
 
-  // removeFromCart(cartItem:CartItem) {
+
+    // removeFromCart(cartItem:CartItem) {
   //   this.items.quantity += 1;
   //   this.itemsService.updateItem(this.items.id, this.items).subscribe((response: any) => {
   //     console.log('Item updated:', this.items);
@@ -48,11 +54,6 @@ export class CartComponent {
   //   });
   // }
 
-  changeQuantity(cartItem:CartItem, quantityString:string) {
-    // convert to Int
-    const quantity = parseInt(quantityString);
-    this.cartService.changeQuantity(cartItem.item.id, quantity);
-  }
 
   // removeFromCart(cartItem: CartItem) {
   //   // Reduziere die Quantity des Artikels um 1

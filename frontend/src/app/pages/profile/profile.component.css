@@ -1,0 +1,34 @@
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.name {
+  display: flex;
+  flex-direction: row;
+  margin-left: 3rem;
+}
+.name-label {
+  margin-right: 3rem;
+}
+
+ .email {
+  display: flex;
+  flex-direction: row;
+  margin-left: 3rem;
+}
+ .email-label {
+  margin-right: 2.9rem;
+ }
+
+ .address {
+  display: flex;
+  flex-direction: row;
+  margin-left: 3rem;
+}
+
+.address-label {
+  margin-right: 3.4rem;
+ }

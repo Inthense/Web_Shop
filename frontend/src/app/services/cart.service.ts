@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Cart } from '../models/Cart';
+import { Cart } from '../models/cart.model';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { Items } from '../models/items.model';
-import { CartItem } from '../models/CartItem';
+import { CartItem } from '../models/cartItem.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class CartService {
 
   addtoCart(item:Items):void {
     let cartItem = this.cart.items.find(cItem => cItem.item.id == item.id);
-    // If the PRoduct is already inside
+    // If the Product is already inside
     if(cartItem) {
       return;
     }else{

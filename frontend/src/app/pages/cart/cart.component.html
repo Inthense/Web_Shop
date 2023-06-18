@@ -1,4 +1,4 @@
-<app-current-page title="Cart Page" margin="1.5rem 0 0 2.5rem"></app-current-page>
+<app-current-page title="Einkaufswagen" margin="1.5rem 0 0 2.5rem"></app-current-page>
 <app-not-found
 [visible]="!cart || !cart.items.length"
 notFoundMessage="Dein Einkaufswagen ist Leer."
@@ -12,7 +12,7 @@ resetLinkRoute="/our-products"
         <img [src]="cartItem.item.imageUrl" [alt]="cartItem.item.name">
       </div>
       <div>
-        <a routerLink="/items/{{cartItem.item.id}}">{{cartItem.item.name}}</a>
+        <a style="text-decoration: none; color: black;" routerLink="/items/{{cartItem.item.id}}">{{cartItem.item.name}}</a>
       </div>
       <div>
         <select #quantitySelect
@@ -41,6 +41,9 @@ resetLinkRoute="/our-products"
     </div>
     <div class="total-price">
       {{cart.totalPrice | currency:'EUR'}}
+    </div>
+    <div class="buy-btn">
+      <button>Kaufen</button>
     </div>
   </div>
 </div>

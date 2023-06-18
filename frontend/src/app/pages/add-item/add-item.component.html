@@ -1,4 +1,4 @@
-<div class="add-item">
+<div *ngIf="isAdmin" class="add-item">
   <div class="details">
     <app-current-page title="Artikel Hinzufügen"></app-current-page>
       <form [formGroup]="itemForm" (ngSubmit)="submit()">

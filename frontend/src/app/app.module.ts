@@ -8,7 +8,7 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { HomeComponent } from './pages/home/home.component';
 import { OurProductsComponent } from './pages/our-products/our-products.component';
 import { DiscoverComponent } from './pages/discover/discover.component';
-import { EarnRewardsComponent } from './pages/earn-rewards/earn-rewards.component';
+import { EarnRewardsComponent } from './pages/sales/sales.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { SearchComponent } from './pages/search/search.component';

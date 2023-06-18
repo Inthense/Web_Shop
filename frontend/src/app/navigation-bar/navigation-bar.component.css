@@ -2,20 +2,19 @@
 @media only screen and (max-width: 1149px) {
 
   .mobile-menu{
-    /*position:fixed;*/
+    margin: 0.5rem;
     z-index:1;
     width: 100%;
   }
 
   .mobile-menu-collapsed{
-    background:rgba(211,211,211, 0.7);
+    background:rgba(255, 255, 255, 0.7);
   }
 
   .mobile-header-icon-container{
     text-align: center;
   }
   .mobile-header-icon{
-    width: 5rem;
     height: 5rem;
     text-align: center;
   }
@@ -25,13 +24,22 @@
   }
 
   .btn-mobile-menu{
-    background-color: #2ba5c4;
+    border-color: lightgray;
+    border-radius: 0.5rem;
     width: 5rem;
     height: 5rem;
   }
 
   .mobile-menu-item{
-    color: #2ba5c4;
+    color: black;
+  }
+
+  a span {
+    background: #ED2B2A;
+    color: white;
+    padding: 0.1rem 0.7rem;
+    border-radius:  100rem;
+    font-size: 1rem;
   }
 
 }
