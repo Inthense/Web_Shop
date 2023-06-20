@@ -134,3 +134,18 @@
 
 
 }
+
+
+.mobile-list{
+  list-style-type: none;
+  margin-top: 1rem;
+}
+
+.mobile-list li{
+  opacity: 0.5  ;
+  transition: 0.3s all;
+}
+
+.mobile-list li:hover{
+  opacity: 1;
+}
