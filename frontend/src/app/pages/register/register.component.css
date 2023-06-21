@@ -1,0 +1,16 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.login span {
+  padding: 0.7rem;
+}
+
+.login a {
+  background-color: whitesmoke;
+  border-radius: 1rem 1rem 1rem 1rem;
+  padding: 0.7rem;
+}

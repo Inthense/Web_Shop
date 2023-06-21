@@ -9,7 +9,7 @@
   <img [src]="items.imageUrl" [alt]="items.name"/>
   <div class="details">
     <div *ngIf="isAdmin" class="edit">
-      Editieren:
+      <span class="edit-text">Editieren:</span>
   </div>
       <span class="name">
         {{items.name}}
@@ -36,4 +36,4 @@
   </div>
 </div>
 <app-comment></app-comment>
-<app-comments></app-comments>
+<app-comments class="comments"></app-comments>

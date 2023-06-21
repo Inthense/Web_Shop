@@ -1,7 +1,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   flex-wrap: wrap;
   padding-bottom: 1rem;
 }
@@ -11,8 +11,9 @@ ul {
 }
 
 .name {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  margin: 1rem 1rem 0rem 1rem;
 }
 
 .name::before {
@@ -21,8 +22,9 @@ ul {
 }
 
 .comment {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  margin: 0rem 1rem 0rem 1rem;
 }
 
 .comment::before {
@@ -37,7 +39,7 @@ ul {
   margin-bottom: 10px;
 }
 
-.list-wrapper{
+.list{
   display: flex;
   flex-direction: column;
   align-items: center ;

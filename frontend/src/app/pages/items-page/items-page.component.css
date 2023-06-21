@@ -31,22 +31,30 @@ img {
 }
 
 .details .edit {
-  margin-left: 15rem;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-areas: 'empty Edit';
+}
+
+.edit-text {
+  grid-area: Edit;
+  margin-bottom: 0.5rem;
   border: 1rem;
   color: black;
   font-size: 1.5rem;
 }
 
 .name {
-  display: flex;
-  flex-direction: row;
   font-size: 2rem;
   font-weight: bold;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-areas: 'name nameEdit';
 }
 
 
 .name input {
-  margin-left: 2rem;
+  grid-area: nameEdit;
   background: lightgrey;
   border: none;
   font-size: 1rem;
@@ -56,19 +64,22 @@ img {
 }
 
 .price {
-  display: flex;
   font-size: 1.8rem;
-  margin: 2rem 2rem 2rem 0;
+  margin: 2rem 0rem 2rem 0;
+  display: grid;
+  grid-template-columns: 20% 30% 50%;
+  grid-template-areas: 'priceTag price editPrice';
   color: green;
 }
 
 .price::before {
+  grid-area: priceTag;
   content: "Preis: ";
   color: darkgrey;
 }
 
 .price input {
-  margin-left: 2rem;
+  grid-area: editPrice;
   background: lightgrey;
   border: none;
   font-size: 1rem;
@@ -79,12 +90,13 @@ img {
 
 .quantity {
   font-size: 1.5rem;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 30% 20% 50%;
+  grid-template-areas: 'quantityTag quantity editQuantity';
 }
 
 .quantity input {
-  margin-left: 3rem;
+  grid-area: editQuantity;
   background: lightgrey;
   border: none;
   font-size: 1rem;
@@ -94,6 +106,7 @@ img {
 }
 
 .quantity::before {
+  grid-area: quantityTag;
   content: "Verfügbar: ";
   color: darkgrey;
 }
@@ -143,4 +156,8 @@ textarea {
   padding: 0.5rem;
   border-radius: 1rem;
   outline: none;
+}
+
+.comments {
+  margin-top: 5rem;
 }

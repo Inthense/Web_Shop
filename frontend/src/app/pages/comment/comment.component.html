@@ -1,6 +1,6 @@
 <div  class="add-comment">
   <div class="details">
-    <app-current-page title="Kommentar Verfassen"></app-current-page>
+    <app-current-page class="title" title="Kommentar Verfassen"></app-current-page>
       <form [formGroup]="commentForm" (ngSubmit)="submit()">
       <text-input [control]="fc.comment" [showErrorsWhen]="isSubmitted" label="Hier kommentar eingeben"></text-input>
       <default-button text="Absenden"></default-button>

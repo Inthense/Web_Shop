@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { CREATE_USER_URL, USER_BY_SEARCH_URL, USER_LOGIN_URL, USER_REGISTER_URL, USER_URL } from '../urls';
 import { ToastrService } from 'ngx-toastr';
 import { InterfaceUserRegister } from '../interfaces/InterfaceUserRegister';
+import { Router } from '@angular/router';
 
 // For setItem()
 const USER_KEY = 'User';
@@ -17,7 +18,7 @@ export class UserService {
   private userSubject = new BehaviorSubject<User>(this.getUserFromLocalStorage());
   public userObservable:Observable<User>;
 
-  constructor(private http:HttpClient, private toastrService:ToastrService) {
+  constructor(private http:HttpClient, private toastrService:ToastrService, private router:Router) {
     this.userObservable = this.userSubject.asObservable();
   }
 
@@ -42,7 +43,7 @@ export class UserService {
   logout() {
     this.userSubject.next(new User());
     localStorage.removeItem(USER_KEY);
-    window.location.reload();
+    this.router.navigate(['/home']);
   }
 
   private setUserToLocalStorage(user:User) {
