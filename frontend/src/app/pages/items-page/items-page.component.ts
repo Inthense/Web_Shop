@@ -84,4 +84,8 @@ export class ItemsPageComponent {
   get isAdmin() {
     return this.user.isAdmin;
     }
+
+  get isAuth() {
+    return this.user.token;
+     }
 }
